@@ -1,14 +1,15 @@
 <h1>Pokeapi</h1>
-<div *ngFor="let pokemon of (pokemons | async)?.results">
-  <div class="card">
-    <hr />
-    <p>{{ pokemon.name }}</p>
-    <p>{{ pokemon.url }}</p>
-    <img
-      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
-        pokemon.url.split('/')[6]
-      }}.png"
-      alt=""
-    />
-  </div>
+<div class="flex">
+  <ng-container *ngFor="let pokemon of (pokemons | async)?.results">
+    <div class="card">
+      <img
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
+          pokemon.url.split('/')[6]
+        }}.png"
+        alt=""
+      />
+      <p>{{ pokemon.name }}</p>
+      <p>{{ pokemon.url }}</p>
+    </div>
+  </ng-container>
 </div>
