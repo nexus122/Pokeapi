@@ -1,0 +1,7 @@
+<div class="card" (click)="selectPokemon(pokemon.name)">
+  <img
+    src="{{ imageUrl + pokemon.url.split('/')[6] }}.png"
+    [alt]="pokemon.name"
+  />
+  <p>{{ pokemon.name }}</p>
+</div>
